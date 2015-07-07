@@ -1,0 +1,129 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3567039145,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ScreenShotHook.beforeTest(Scenario)"
+            }
+          }
+        ],
+        "line": 11,
+        "name": "this scenario tests how user logs in gmail, navigates to drafts and verifies draft stored mail",
+        "description": "",
+        "id": "this-feature-tests-the-drafts-in-gmail;this-scenario-tests-how-user-logs-in-gmail,-navigates-to-drafts-and-verifies-draft-stored-mail;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 712202,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ScreenShotHook.afterTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 8053962695,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "the user \u0027juan.epam\u0027 loggs in using his password \u0027Password123$\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "juan.epam",
+                  "offset": 10
+                },
+                {
+                  "val": "Password123$",
+                  "offset": 50
+                }
+              ],
+              "location": "GmailTest.theUserLoggsInUsingHisUserNameAndPassword(String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1
+            ],
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4904655062,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "starts composing a new email providing recipient \u0027juan.epam@gmail.com\u0027 and topic \u0027Test Drafting\u0027",
+            "match": {
+              "arguments": [
+                {
+                  "val": "juan.epam@gmail.com",
+                  "offset": 50
+                },
+                {
+                  "val": "Test Drafting",
+                  "offset": 82
+                }
+              ],
+              "location": "GmailTest.userStartsComposingNewEmailProvidesRcipientAndTopic(String,String)"
+            },
+            "matchedColumns": [
+              2,
+              3
+            ],
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 118101937,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user during mail composing navigates to drafts",
+            "match": {
+              "location": "GmailTest.userDuringMailComposingNavigatesToDrafts()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1230410761,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "verify email with title \u0027Test Drafting\u0027 is stored in draft\u0027s folder",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Test Drafting",
+                  "offset": 25
+                }
+              ],
+              "location": "GmailTest.verifySpecificEmailIsInTheBox(String)"
+            },
+            "matchedColumns": [
+              3
+            ],
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "This feature tests the drafts in Gmail",
+    "description": "",
+    "id": "this-feature-tests-the-drafts-in-gmail",
+    "keyword": "Feature",
+    "uri": "draftingGmailFeatures/draftingMail.feature"
+  }
+]
