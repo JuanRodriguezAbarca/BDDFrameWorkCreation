@@ -8,4 +8,4 @@ Feature: This feature tests the drafts in Gmail
 
   Examples:
     | userName  | password     | recipient           | topic         |
-    | juan.epam | Password123$ | juan.epam@gmail.com | Test Drafting |
+    | juan.epa | Password123$ | juan.epam@gmail.com | Test Drafting |
