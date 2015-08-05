@@ -1,3 +1,4 @@
+@Prueba
 Feature: This feature tests the drafts in Gmail
 
   Scenario Outline: this scenario tests how user logs in gmail, navigates to drafts and verifies draft stored mail

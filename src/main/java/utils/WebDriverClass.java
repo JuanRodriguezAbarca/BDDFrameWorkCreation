@@ -37,43 +37,45 @@ public class WebDriverClass {
 
     private static WebDriver driverSelector() {
 
+
         String driverType = System.getProperty("driver");
+        if(driverType==null)
+            driverType = "";
+
         LOG.info("Driver loading is " + driverType);
+
         switch (driverType) {
 
             case "firefox":
-
-
                 return new FirefoxDriver();
             case "chrome":
                 return new ChromeDriver();
             case "ie":
-                WebDriver tempDriver=new InternetExplorerDriver();
-                System.setProperty("webdriver.ie.driver.silent","true");
-                System.setProperty("webdriver.ie.driver.loglevel","ERROR");
-
+                WebDriver tempDriver = new InternetExplorerDriver();
+                System.setProperty("webdriver.ie.driver.silent", "true");
+                System.setProperty("webdriver.ie.driver.loglevel", "ERROR");
                 return tempDriver;
             default:
-                throw new ExceptionInInitializerError("No driver loaded, '"+driverType+"' is not recognized");
+                return new FirefoxDriver();
 
         }
     }
 
 
     private static class BrowserClearup implements Runnable {
-        public void run(){
-            LOG.info("Closing the broser...");
+        public void run() {
+            LOG.info("Closing the browser...");
             close();
         }
     }
 
 
-    public static void close(){
-        try{
+    public static void close() {
+        try {
             getInstance().quit();
-            driver=null;
+            driver = null;
             LOG.info("Closing the browser");
-        } catch (UnreachableBrowserException e){
+        } catch (UnreachableBrowserException e) {
             LOG.info("cannot close the browser: unreachable browser");
         }
     }
