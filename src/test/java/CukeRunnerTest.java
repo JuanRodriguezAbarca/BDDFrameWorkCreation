@@ -16,9 +16,9 @@ import static org.junit.runners.Parameterized.*;
 
         monochrome = false,
         format = {"pretty", "html:target/cucumber-html-report","json:target/cucumber.json"}, snippets = SnippetType.CAMELCASE,
-        features="src/test/resources",
-        tags = {"@RESTtestHTTPC1"
-        }
+        features="src/test/resources"
+//        tags = {"@RESTtestHTTPC1"
+//        }
 
 
 )

@@ -1,6 +1,5 @@
 package testingRESTexamples;
 
-import GmailPages.HTTPClientMethods;
 import cucumber.api.java.en.Given;
 
 /**
@@ -8,7 +7,7 @@ import cucumber.api.java.en.Given;
  */
 public class RESTforHTTPClient {
 
-    HTTPClientMethods httpClientMethods = new HTTPClientMethods();
+    HTTPClientPorcuilo httpClientMethods = new HTTPClientPorcuilo();
 
     @Given("^I am testing using HTTPClient first example$")
     public void iAmTestingUsingHttpClientFirstExample(){

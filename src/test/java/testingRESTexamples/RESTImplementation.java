@@ -1,5 +1,10 @@
 package testingRESTexamples;
 
+
+
+import com.jayway.restassured.builder.RequestSpecBuilder;
+import com.jayway.restassured.response.Response;
+import com.jayway.restassured.specification.RequestSpecification;
 import cucumber.api.java.en.Given;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -7,20 +12,8 @@ import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
 import static com.jayway.restassured.RestAssured.*;
-import static com.jayway.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*;
-
-import com.jayway.restassured.builder.RequestSpecBuilder;
-import com.jayway.restassured.response.Response;
-import com.jayway.restassured.specification.RequestSpecification;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import static org.hamcrest.Matchers.equalTo;
 
 /**
  * Created by Juan_Rodriguez on 7/31/2015.
@@ -95,7 +88,7 @@ public class RESTImplementation {
                 "firstName", equalTo("Juan"),
                 "lastName", equalTo("Tester"),
                 "id", equalTo("1")).
-                when().get("D:/ClonningProjectFromGit/BDDFrameWork/BDDFrameWorkCreation/src/test/resources/jsonViaGet.json/jsonViaGet.json");
+                when().get("http://localhost:8080/jsonViaGet.json");
     }
 
     @Given("^I am using REST assured instead of HTTPclient to test google.com$")
