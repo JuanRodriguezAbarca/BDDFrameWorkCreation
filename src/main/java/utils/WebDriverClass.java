@@ -23,7 +23,6 @@ public class WebDriverClass {
     public static WebDriver getInstance() {
         if (driver == null) {
             try {
-
                 WebDriverClass.driver = driverSelector();
                 driver.manage().window().maximize();
             } finally {
@@ -36,44 +35,40 @@ public class WebDriverClass {
     }
 
     private static WebDriver driverSelector() {
-
-        String driverType = System.getProperty("driver");
+        String driverType = System.getProperty("driverType");
         LOG.info("Driver loading is " + driverType);
         switch (driverType) {
-
             case "firefox":
-
-
                 return new FirefoxDriver();
             case "chrome":
                 return new ChromeDriver();
             case "ie":
-                WebDriver tempDriver=new InternetExplorerDriver();
-                System.setProperty("webdriver.ie.driver.silent","true");
-                System.setProperty("webdriver.ie.driver.loglevel","ERROR");
+                WebDriver tempDriver = new InternetExplorerDriver();
+                System.setProperty("webdriver.ie.driver.silent", "true");
+                System.setProperty("webdriver.ie.driver.loglevel", "ERROR");
 
                 return tempDriver;
             default:
-                throw new ExceptionInInitializerError("No driver loaded, '"+driverType+"' is not recognized");
+                throw new ExceptionInInitializerError("No driver loaded, '" + driverType + "' is not recognized");
 
         }
     }
 
 
     private static class BrowserClearup implements Runnable {
-        public void run(){
+        public void run() {
             LOG.info("Closing the broser...");
             close();
         }
     }
 
 
-    public static void close(){
-        try{
+    public static void close() {
+        try {
             getInstance().quit();
-            driver=null;
+            driver = null;
             LOG.info("Closing the browser");
-        } catch (UnreachableBrowserException e){
+        } catch (UnreachableBrowserException e) {
             LOG.info("cannot close the browser: unreachable browser");
         }
     }
